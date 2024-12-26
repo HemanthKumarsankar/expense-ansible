@@ -1,0 +1,13 @@
+- name: PLAY-01 
+  hosts: anisble_node_private_IP
+  tasks:
+  - name: PLAY-01 TASK-01
+    ansible.builtin.debug: #module to display the msgs
+     msg: "this is from PLAY-01 and TASK-01"
+
+- name: PLAY-02
+  hosts: anisble_node_private_IP
+  tasks: 
+  - name: PLAY-02 TASK-02
+    ansible.builtin.debug: 
+     msg: "this is from PLAY-02 and TASK-02"
