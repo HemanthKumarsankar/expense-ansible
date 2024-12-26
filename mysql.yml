@@ -1,0 +1,30 @@
+- name: install mysql
+  hosts: mysql
+  become: yes
+  vars:
+   login_root_password: ExpenseApp@1
+   login_host: mysql.hemanth.online
+
+  tasks:
+  - name: install mysql
+    ansible.builtin.package:
+     name: mysql
+     state: present
+
+  - name: start the service
+    ansible.builtin.service:
+     name: mysql
+     state: started
+     enable: yes
+
+  - name: connect to mysql server
+    community.mysql.mysql_info:
+     login_user: root
+     login_password: "{{login_root_password}}"
+     login_host: "{{login_host}}"
+    register: mysql_info
+
+  - name: print mysql info
+    ansible.builtin.debug:
+      msg: "{{mysql_info}}"
+  
