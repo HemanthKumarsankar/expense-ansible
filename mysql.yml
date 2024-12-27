@@ -3,7 +3,7 @@
   become: yes
   vars:
    login_root_password: ExpenseApp@1
-   login_host: 172.31.86.159
+   login_host: mysql
 
   tasks:
   - name: install mysql
@@ -13,7 +13,7 @@
 
   - name: start the service
     ansible.builtin.service:
-     name: mysql
+     name: mysqld
      state: started
      enable: yes
 
