@@ -2,7 +2,7 @@
   hosts: mysql
   become: yes
   vars:
-   login_root_password: ExpenseApp@1
+   login_root_password: Hem@12345$
    login_host: mysql.hemanth.online
 
   tasks:
