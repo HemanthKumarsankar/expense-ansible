@@ -2,8 +2,8 @@
   hosts: mysql
   become: yes
   vars:
-   login_root_password: Hem@12345$
-   login_host: mysql.hemanth.online
+   login_root_password: ExpenseApp@1
+   login_host: 172.31.86.159
 
   tasks:
   - name: install mysql
